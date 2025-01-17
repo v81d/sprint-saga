@@ -67,7 +67,6 @@ class DeathScreen:
         shake_duration=0,
         shake_intensity=0,
     ):
-        running = True
         clock = pygame.time.Clock()
         alpha = 0
         vignette_alpha = 216
@@ -85,7 +84,7 @@ class DeathScreen:
         diagonal = int((self.SCREEN_WIDTH**2 + self.SCREEN_HEIGHT**2) ** 0.5)
         rotation_surface = pygame.Surface((diagonal, diagonal), pygame.SRCALPHA)
 
-        while running:
+        while True:
             clock.tick(60)
 
             if self.current_tilt < self.max_tilt_angle:
