@@ -1,19 +1,5 @@
 import sys
-import subprocess
-
-modules = ["pygame", "cryptography", "keyring"]
-
-for module in modules:
-    try:
-        __import__(module)
-    except ImportError:
-        subprocess.check_call(
-            [sys.executable, "-m", "pip", "install", module],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-
-
+import os
 import modules.player as player
 import os
 import random
