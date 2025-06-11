@@ -74,7 +74,7 @@ class DeathScreen:
         vignette_fade_speed = 0.1
         shake_frames = 0
 
-        tip = random.choice(self.tips)
+        tip = random.choice(self.tips).replace("{$SCORE}", str(score))
         font = pygame.font.Font("./assets/glyphs/fonts/PeaberryMono.ttf", 24)
         tip_surface = font.render(tip, True, (232, 135, 132))
         tip_rect = tip_surface.get_rect(
