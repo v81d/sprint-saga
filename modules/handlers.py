@@ -25,6 +25,7 @@ class Handlers:
         self.MAX_JUMP_DURATION = 16
         self.velocity_y = 0
         self.jumping = False
+        self.was_jumping = False
         self.jump_frame_index = 0
         self.jump_frame_delay = 200
         self.jump_button_released = False
@@ -46,6 +47,7 @@ class Handlers:
         self.previous_track = None
 
         self.step_sound = pygame.mixer.Sound("./assets/sfx/step.wav")
+        self.land_sound = pygame.mixer.Sound("./assets/sfx/land.wav")
         self.jump_sound = pygame.mixer.Sound("./assets/sfx/jump.wav")
         self.coin_sound = pygame.mixer.Sound("./assets/sfx/coin_collect.wav")
 
@@ -103,9 +105,9 @@ class Handlers:
             or (self.mouse_click[0] and not canceled)
         ):
             self.jump()
-        else:
-            if self.jumping:
-                self.jump_button_released = True
+        elif self.jumping:
+            self.jump_button_released = True
+
         if (
             (
                 keys_pressed[pygame.K_LSHIFT]
@@ -192,6 +194,8 @@ class Handlers:
         )
 
     def update_player(self):
+        self.was_jumping = self.jumping
+
         if self.jumping:
             self.media.character_y_position = min(
                 self.media.character_y_position + self.velocity_y,
@@ -202,6 +206,8 @@ class Handlers:
                 self.media.character_y_position
                 >= self.SCREEN_HEIGHT - self.ground_height - self.character_height
             ):
+                if self.was_jumping:  # Player has landed
+                    self.land_sound.play()
                 self.jumping = False
                 self.jump_button_released = False
                 self.media.character_y_position = (
@@ -271,6 +277,7 @@ class Handlers:
         self.MAX_JUMP_DURATION = 16
         self.velocity_y = 0
         self.jumping = False
+        self.was_jumping = False
         self.jump_frame_index = 0
         self.jump_frame_delay = 200
         self.jump_button_released = False
@@ -291,8 +298,10 @@ class Handlers:
         self.previous_track = None
 
         self.step_sound = pygame.mixer.Sound("./assets/sfx/step.wav")
+        self.land_sound = pygame.mixer.Sound("./assets/sfx/land.wav")
         self.jump_sound = pygame.mixer.Sound("./assets/sfx/jump.wav")
         self.coin_sound = pygame.mixer.Sound("./assets/sfx/coin_collect.wav")
         self.step_sound.set_volume(0.3)
+        self.land_sound.set_volume(0.5)
         self.jump_sound.set_volume(0.5)
         self.coin_sound.set_volume(0.6)
