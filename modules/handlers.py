@@ -50,7 +50,11 @@ class Handlers:
         self.coin_sound = pygame.mixer.Sound("./assets/sfx/coin_collect.wav")
 
     def play_random(self):
-        songs = [f for f in os.listdir(self.music_folder) if f.endswith(".wav")]
+        songs = [
+            song
+            for song in os.listdir(self.music_folder)
+            if song.endswith(".wav") or song.endswith(".mp3") or song.endswith(".ogg")
+        ]
         if songs:
             song = random.choice(songs)
             while song == self.previous_track:
@@ -64,7 +68,7 @@ class Handlers:
     def fade_in_music(self, fade_duration=10000):
         self.fade_start_time = pygame.time.get_ticks()
         self.fade_duration = fade_duration
-        self.fade_target_volume = 0.04
+        self.fade_target_volume = 0.3
         self.fading_in = True
 
     def update_music(self):
@@ -94,6 +98,7 @@ class Handlers:
         if (
             keys_pressed[pygame.K_SPACE]
             or keys_pressed[pygame.K_w]
+            or keys_pressed[pygame.K_k]
             or keys_pressed[pygame.K_UP]
             or (self.mouse_click[0] and not canceled)
         ):
@@ -102,7 +107,11 @@ class Handlers:
             if self.jumping:
                 self.jump_button_released = True
         if (
-            (keys_pressed[pygame.K_LSHIFT] or keys_pressed[pygame.K_d])
+            (
+                keys_pressed[pygame.K_LSHIFT]
+                or keys_pressed[pygame.K_d]
+                or keys_pressed[pygame.K_l]
+            )
             and self.energy > 0
             and not self.energy_regenerating_mode
         ):

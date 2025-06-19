@@ -158,9 +158,9 @@ def main_menu(instance):
         ratio = ui_alpha / decrement
 
         while ui_alpha > 0:
-            ui_alpha = max(0, ui_alpha - decrement)
-            overlay_alpha = max(0, overlay_alpha - 96 / ratio)
-            credits_alpha = max(36, credits_alpha - 28 / ratio)
+            ui_alpha = int(max(0, ui_alpha - decrement))
+            overlay_alpha = int(max(0, overlay_alpha - 96 / ratio))
+            credits_alpha = int(max(36, credits_alpha - 28 / ratio))
 
             title.set_alpha(ui_alpha)
             play.set_alpha(ui_alpha)
