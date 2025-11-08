@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructions - Sprint Saga</title>
+    <link rel="shortcut icon" href="./assets/media/icon.ico" type="image/x-icon" />
+    <style>
+        body {
+            font-family: Segoe UI, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 50px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            padding: 10px 15px;
+            text-align: center;
+        }
+        main {
+            padding: 50px;
+            max-width: 800px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        figure {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        figcaption {
+            color: #999;
+            margin-top: 12px;
+            text-align: center;
+        }
+        h1, h2, h3 {
+            color: #007acc;
+        }
+        a {
+            color: #00b8cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #077b9e;
+            text-decoration: underline dotted;
+        }
+        a::after {
+            content: '🗗';
+            margin-left: 0.2em;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Droid Sans', monospace;
+        }
+        .steps {
+            margin: 20px 0;
+        }
+        .steps li {
+            margin-bottom: 15px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            color: #555;
+            margin-top: 20px;
+        }
+        .scroll-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007acc;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+        .scroll-button:hover {
+            background: #005f99;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thank you for downloading Sprint Saga!</h1>
+    </header>
+    <main>
+    	<figure>
+    	    <img src="./assets/media/screenshot.png" alt="Screenshot" />
+            <figcaption>Sprint Saga, an endless side-scrolling runner game.</figcaption>
+        </figure>
+        <h2 id="introduction">Introduction</h2>
+        <p>First of all, I would like to sincerely thank you for checking out my game, Sprint Saga! If you didn't know already, Sprint Saga is an endless 2D runner game where the goal is to collect coins while avoiding the obstacles. This game was built entirely with <a href="https://www.pygame.org/news">Pygame</a>, a free and open-source cross-platform library for the development of multimedia applications like video games using Python.</p>
+        <p>In order to run Sprint Saga, you must first install Python on your machine. Python is a versatile programming language that is easy to install and use. This guide will walk you through the steps to install Python on your computer.</p>
+
+        <h2>Steps to Install Python</h2>
+        <ol class="steps">
+            <li>
+                <h3>Download the Python Installer</h3>
+                <p>Go to the <a href="https://www.python.org/downloads/" target="_blank">official Python website</a> and download the latest version of Python for your operating system (Windows, macOS, or Linux).</p>
+            </li>
+            <li>
+                <h3>Run the Installer (Windows)</h3>
+                <p>Locate the downloaded file and double-click it to run the installer. On the first screen, make sure to check the box labeled <code>Add Python to PATH</code>. Select <code>Install Now</code> to install Python with default settings, or choose <code>Customize Installation</code> to select optional features and installation location.</p>
+            </li>
+            <li>
+                <h3>Run the Installer (macOS)</h3>
+                <p>Open the downloaded .pkg file and follow the instructions in the installer. Python will be installed in the default location.</p>
+            </li>
+            <li>
+                <h3>Install Python using Package Manager (Linux)</h3>
+                <p>Open your terminal and run the following command:</p>
+                <pre><code>sudo apt-get install python3</code></pre>
+                <p>or for other distributions, use the appropriate package manager (e.g., <code>yum</code>, <code>dnf</code>, <code>pacman</code>).</p>
+            </li>
+            <li>
+                <h3>Verify the Installation</h3>
+                <p>Open your command prompt (or terminal) and type <code>python --version</code> or <code>python3 --version</code>. You should see the installed version of Python.</p>
+            </li>
+        </ol>
+
+        <h2>Conclusion</h2>
+        <p>Congratulations! You have successfully installed Python. You do not need to set up anything else anymore; all you have to do is run the game by opening <code>main.py</code>! Enjoy the game and happy sprinting! (●'◡'●)</p>
+    </main>
+    <button class="scroll-button" onclick="scrollToIntroduction()">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M6.34317 7.75732L4.92896 9.17154L12 16.2426L19.0711 9.17157L17.6569 7.75735L12 13.4142L6.34317 7.75732Z" fill="currentColor" />
+        </svg>
+    </button>
+    <footer>
+        <p>Made by <a href="https://github.com/v81d">@v81d</a>.</p>
+    </footer>
+    
+    <script>
+        function scrollToIntroduction() {
+            document.getElementById('introduction').scrollIntoView({ behavior: 'smooth' });
+        }
+
+	    window.addEventListener('scroll', () => {
+            const introduction = document.getElementById('introduction');
+            const scrollButton = document.querySelector('.scroll-button');
+            if (window.scrollY < introduction.offsetTop - 300) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+        
+        window.addEventListener('load', () => {
+            const introduction = document.getElementById('introduction');
+            const scrollButton = document.querySelector('.scroll-button');
+            if (window.scrollY < introduction.offsetTop - 300) {
+                scrollButton.style.display = 'flex';
+            } else {
+                scrollButton.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
