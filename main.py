@@ -1,14 +1,15 @@
-import sys
 import os
 import random
-import pygame
-import modules.player as player
-from modules.game import Game
-from modules.button import Button
-from modules.media import Media
-from modules.handlers import Handlers
+import sys
 from datetime import date, datetime
 
+import pygame
+
+import modules.player as player
+from modules.button import Button
+from modules.game import Game
+from modules.handlers import Handlers
+from modules.media import Media
 
 pygame.init()
 
@@ -29,7 +30,7 @@ handlers = Handlers(instance, SCREEN_WIDTH, SCREEN_HEIGHT, scroll)
 
 background = pygame.Surface(instance.get_size())
 
-YYYY = 2000  # Dummy year
+YYYY = 2000
 
 seasons = [
     ("winter", (date(YYYY, 1, 1), date(YYYY, 3, 20))),
@@ -133,7 +134,12 @@ def main_menu(instance):
         fading_in = True
 
     def update_music():
-        global current_time, fade_start_time, fade_duration, fade_target_volume, fading_in
+        global \
+            current_time, \
+            fade_start_time, \
+            fade_duration, \
+            fade_target_volume, \
+            fading_in
 
         current_time = pygame.time.get_ticks()
 
@@ -401,7 +407,7 @@ def main_menu(instance):
             click_sound.play()
         elif play_update == "RELEASED":
             result = start_game()
-            if not result:  # If player chose to quit
+            if not result:
                 running = False
 
         exit_update = exit.update(mouse_pos, mouse_click)
@@ -440,7 +446,7 @@ def main_menu(instance):
                             running = False
                         case pygame.K_SPACE:
                             result = start_game()
-                            if not result:  # If player chose to quit
+                            if not result:
                                 running = False
                 case pygame.QUIT:
                     running = False
@@ -502,10 +508,9 @@ if __name__ == "__main__":
     running = True
     while running:
         result = main_menu(instance)
-        if not result:  # If player chose to quit
+        if not result:
             running = False
 
-    # Peacefully exit the program
     pygame.quit()
     sys.stdout.flush()
     sys.stderr.flush()

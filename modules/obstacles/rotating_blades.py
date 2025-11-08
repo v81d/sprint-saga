@@ -1,5 +1,6 @@
-from modules.media import Media
 import random
+
+from modules.media import Media
 
 
 class RotatingBlade:

@@ -1,7 +1,9 @@
-import modules.player as player
 import os
 import random
+
 import pygame
+
+import modules.player as player
 from modules.media import Media
 
 
@@ -173,7 +175,9 @@ class Handlers:
                 else (
                     "medium"
                     if 34 <= self.energy < 67
-                    else "low" if 14.4 < self.energy < 34 else "very_low"
+                    else "low"
+                    if 14.4 < self.energy < 34
+                    else "very_low"
                 )
             )
         )
