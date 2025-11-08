@@ -505,5 +505,8 @@ if __name__ == "__main__":
         if not result:  # If player chose to quit
             running = False
 
+    # Peacefully exit the program
     pygame.quit()
+    sys.stdout.flush()
+    sys.stderr.flush()
     sys.exit()
