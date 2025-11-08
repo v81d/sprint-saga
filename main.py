@@ -29,7 +29,7 @@ handlers = Handlers(instance, SCREEN_WIDTH, SCREEN_HEIGHT, scroll)
 
 background = pygame.Surface(instance.get_size())
 
-YYYY = 2000
+YYYY = 2000  # Dummy year
 
 seasons = [
     ("winter", (date(YYYY, 1, 1), date(YYYY, 3, 20))),
