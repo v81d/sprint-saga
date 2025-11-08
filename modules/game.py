@@ -39,7 +39,7 @@ class Game:
         self.spikes = Spike(self.instance, self.SCREEN_WIDTH, self.SCREEN_HEIGHT)
 
         self.tutorial_step_start_time = None
-        self.tutorial_steps = None
+        self.tutorial_steps = []
         with open("./assets/json/tutorial_steps.json", "r") as data:
             tutorial_data = json.load(data)
             self.tutorial_steps = tutorial_data["steps"]
@@ -299,7 +299,7 @@ class Game:
                                 self.tutorial_step += 1
                         else:
                             self.handlers.attributes["tutorial"] = 0
-                            self.tutorial_step = None
+                            self.tutorial_step = 0
 
             self.media.draw_text(
                 text=f"FPS {int(self.clock.get_fps())}",
