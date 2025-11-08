@@ -521,3 +521,4 @@ if __name__ == "__main__":
             running = False
 
     pygame.quit()
+    sys.exit()
