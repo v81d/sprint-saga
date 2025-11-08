@@ -1,27 +1,48 @@
-### Game Assets
+# 🏃‍♂️ **Sprint Saga**  
+_A Relaxing Endless 2D Runner Game_
 
-#### Visual Elements
+Welcome to **Sprint Saga**! This is a chill, easy-going endless runner where you dodge obstacles and collect coins while enjoying the steady pace of the game. It’s all about relaxing and having fun, no stress or fast pace.
 
-- **Background, Ground, and Character:** Jungle Pack by Jesse Munguia - [jesse-m.itch.io](https://jesse-m.itch.io/)
-- **Obstacles:** Game Developer Studio - [OpenGameArt.org](https://opengameart.org/content/2d-obstacle-collection)
-- **Emojis:** EMOJI | Comic Pack by Notokapixel - [narehop.itch.io](https://narehop.itch.io)
+---
 
-#### Fonts
+## 🎮 **Gameplay**
 
-- **GGBotNet:** Jupiteroid - [www.dafont.com](https://www.dafont.com/jupiteroid.font)
-- **emhuo:** Peaberry Mono - [emhuo.itch.io](https://emhuo.itch.io/peaberry-pixel-font)
+- 🏃‍♂️ Your character runs automatically—just focus on **jumping** and **dodging**.
+- 💰 Collect coins to boost your score!
+- ⚠️ Avoid obstacles, but don’t worry—it’s not too hard! Just a relaxing experience.
+- ⏳ The game continues at a steady, calm pace—perfect for stress-free play.
 
-#### Audio
+---
 
-#### Menu Soundtrack
+## 🛠 **Built With**
 
-- **Abstraction:** Decorate, Explore, Menu In, Menu Loop - [tallbeard.itch.io](https://tallbeard.itch.io/music-loop-bundle)
-- **Sonatina:** Interlude - [sonatina.itch.io](https://sonatina.itch.io)
+- **Python 3**  
+- **Pygame** – For graphics, input, and sound  
+- **Keyring** – For securely saving your high scores
 
-#### In-Game Soundtrack
+---
 
-- **GamesAreJust4fun:** Twilight Treetop Village, Luminous Reservoir - [gamesarejust4fun.newgrounds.com](https://gamesarejust4fun.newgrounds.com)
-- **GraviteHawk:** DreamRunner - [gavitehawk.newgrounds.com](https://gavitehawk.newgrounds.com)
-- **WildTheory:** Lifetime Chances - [wildtheory.newgrounds.com](https://wildtheory.newgrounds.com)
-- **PeriTune:** Deep Woods, Sweet, Dawning Tale - [peritune.itch.io](https://peritune.itch.io)
-- **Suno:** Sage, Sprinter's Saga - [suno.com](https://suno.com)
+## 🚀 **Getting Started**
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/v81d/sprint-saga.git
+cd sprint-saga
+```
+
+2. Install dependencies:
+```bash
+pip install pygame keyring
+```
+
+3. Run the game:
+```bash
+python main.py
+```
+
+---
+
+_Sprint Saga_ is built to be a relaxing game to enjoy at your own pace. Feel free to play, provide feedback, or contribute!
+**Enjoy the run!**
+— v81d
