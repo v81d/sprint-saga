@@ -1,9 +1,10 @@
-import os
 import json
+import os
+
 import keyring
 from cryptography.fernet import Fernet
 
-DATA_PATH = "data/user/player.dat"
+DATA_PATH = ".data/user/player.dat"
 SERVICE_NAME = "sprint-saga/player"
 
 

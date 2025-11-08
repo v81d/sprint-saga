@@ -1,5 +1,7 @@
 import random
+
 import pygame
+
 from modules.media import Media
 
 

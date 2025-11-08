@@ -1,12 +1,14 @@
-import random
-import pygame
 import json
-from modules.death import DeathScreen
-from modules.obstacles.spikes import Spike
-from modules.obstacles.rotating_blades import RotatingBlade
-from modules.coins import Coins
+import random
+
+import pygame
+
 from modules.button import Button
+from modules.coins import Coins
+from modules.death import DeathScreen
 from modules.media import Media
+from modules.obstacles.rotating_blades import RotatingBlade
+from modules.obstacles.spikes import Spike
 
 
 class Game:
@@ -83,7 +85,7 @@ class Game:
             shake_duration=15,
             shake_intensity=5,
         )
-        return result  # Return the result to main menu
+        return result  # return the result to main menu
 
     def display_tutorial(self, text, duration):
         current_time = pygame.time.get_ticks()

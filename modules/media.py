@@ -1,4 +1,5 @@
 import random
+
 import pygame
 
 
@@ -19,12 +20,12 @@ class Media:
             self.SCREEN_HEIGHT - self.ground_height - self.character[0].get_height()
         )
         self.character_jump = pygame.transform.scale(
-            pygame.image.load(f"./assets/media/character/jump.png").convert_alpha(),
+            pygame.image.load("./assets/media/character/jump.png").convert_alpha(),
             (46, 68),
         )
         self.character_midair = self.load_character_midair()
         self.character_landing = pygame.transform.scale(
-            pygame.image.load(f"./assets/media/character/landing.png").convert_alpha(),
+            pygame.image.load("./assets/media/character/landing.png").convert_alpha(),
             (46, 68),
         )
 
@@ -179,9 +180,12 @@ class Media:
         image = pygame.transform.scale(image, (w, h))
 
         if color:
-            colored_image = pygame.Surface(image.get_size()).convert_alpha(), (
-                w,
-                h,
+            colored_image = (
+                pygame.Surface(image.get_size()).convert_alpha(),
+                (
+                    w,
+                    h,
+                ),
             )
             colored_image.fill(color)
             colored_image.blit(image, (x, y), special_flags=pygame.BLEND_MULT)
