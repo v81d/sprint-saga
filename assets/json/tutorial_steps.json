@@ -1,0 +1,16 @@
+{
+    "duration": 6000,
+    "steps": [
+        "Welcome, fellow Sprinter!",
+        "Your journey begins here, in the Infinite Jungle.",
+        "Your goal is to collect as many coins as possible.",
+        "But beware of the obstacles!",
+        "Jump over them by clicking or pressing SPACE.",
+        "The longer you hold, the higher you jump!",
+        "Sometimes, you may need to jump over two at once.",
+        "You can also hold LSHIFT or D to sprint.",
+        "But be careful, sprinting consumes energy.",
+        "Make wise moves and take careful steps.",
+        "Best of luck, Sprinter!"
+    ]
+}
