@@ -1,9 +1,8 @@
 import sys
 import os
-import modules.player as player
-import os
 import random
 import pygame
+import modules.player as player
 from modules.game import Game
 from modules.button import Button
 from modules.media import Media
