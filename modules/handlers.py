@@ -284,4 +284,6 @@ class Handlers:
         self.step_sound = pygame.mixer.Sound("./assets/sfx/step.wav")
         self.jump_sound = pygame.mixer.Sound("./assets/sfx/jump.wav")
         self.coin_sound = pygame.mixer.Sound("./assets/sfx/coin_collect.wav")
-        self.step_sound.set_volume(0.4)
+        self.step_sound.set_volume(0.3)
+        self.jump_sound.set_volume(0.5)
+        self.coin_sound.set_volume(0.6)
